@@ -19,13 +19,13 @@ Vagrant.configure(2) do |config|
   config.vm.define "control" do |control|
     control.vm.box = "box-cutter/ubuntu1404-desktop"
     control.vm.network "private_network", ip: "192.168.100.100"
-    control.vm.provision "shell", path: "control-provisioner.sh"
+    control.vm.provision "shell", path: "vagrant-provision/control-provisioner.sh"
   end
 
   config.vm.define "remote" do |remote|
     remote.vm.box = "hashicorp/precise64"
     remote.vm.network "private_network", ip: "192.168.100.101"
-    remote.vm.provision "shell", path: "remote-provisioner.sh"
+    remote.vm.provision "shell", path: "vagrant-provision/remote-provisioner.sh"
   end
 
   # Disable automatic box update checking. If you disable this, then
