@@ -11,5 +11,5 @@ sudo -u vagrant -H sh -c "sudo apt-get install ansible -y"
 
 sudo -u vagrant -H sh -c "mkdir ~/ansible-test"
 sudo -u vagrant -H sh -c "cp /vagrant/inventory ~/ansible-test/inventory"
-
+sudo -u vagrant -H sh -c "cp /vagrant/patch.ubuntu.yml ~/ansible-test/patch.ubuntu.yml"
 
