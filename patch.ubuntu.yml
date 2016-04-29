@@ -1,0 +1,41 @@
+---
+- name: Patch Ubuntu
+  hosts: grad-test-remote
+  remote_user: vagrant
+  become: yes
+  become_method: sudo 
+
+  tasks:
+
+    - name: Get OS Version
+      shell: lsb_release -a
+      register: os_version
+
+    - name: Print OS Version
+      debug: var=os_version.stdout_lines
+
+    - name: Update Apt Cache
+      apt: update_cache=yes
+
+    - name: Upgrade OS
+      apt: upgrade=dist
+
+    - name: Reboot Machine
+      shell: shutdown -r now
+     
+    - name: Wait for Machine to come back up
+      local_action: wait_for host={{ inventory_hostname }} state=started port=22 delay=10
+
+    - name: Get OS Version
+      shell: lsb_release -a
+      register: os_version
+
+    - name: Print OS Version
+      debug: var=os_version.stdout_lines
+
+    - name: Get Uptime
+      shell: uptime
+      register: result
+
+    - name: Print Uptime
+      debug: var=result.stdout_lines
