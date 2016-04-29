@@ -1,3 +1,2 @@
 [all]
-grad-test-control ansible_ssh_user=vagrant ansible_ssh_host=192.168.0.110
-grad-test-server  ansible_ssh_user=vagrant ansible_ssh_host=192.168.0.111
+grad-test-remote  ansible_ssh_user=vagrant ansible_ssh_host=192.168.100.101
