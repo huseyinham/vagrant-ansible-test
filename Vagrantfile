@@ -10,6 +10,12 @@ Vagrant.configure(2) do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = "http://10.0.2.2:3128/"
+    config.proxy.https    = "http://10.0.2.2:3128/"
+    config.proxy.no_proxy = "localhost,127.0.0.1"
+  end
+
   config.vm.define "control" do |control|
     control.vm.box = "box-cutter/ubuntu1404-desktop"
     control.vm.network "private_network", ip: "192.168.100.100"
