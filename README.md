@@ -6,7 +6,7 @@ Your challenge is to write a piece of automation to run against a remote Ubuntu 
 
 In order to make the project easily runnable I have used vagrant to provision both a ubuntu desktop machine (the control machine that the automation can be run from) and
 a ubuntu server (the remote machine that should be patched and rebooted by the automation.) The Vagrantfile used here has been tested on both a mac and windows machine
-running version 5.0.18 of virtual box.
+running version 5.0.18 of virtual box and version 1.8.1 of vagrant.
 
 ## Setting up the vagrant virtual machines
 
