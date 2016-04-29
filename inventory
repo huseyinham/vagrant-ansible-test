@@ -1,2 +1,2 @@
 [all]
-grad-test-remote  ansible_ssh_user=vagrant ansible_ssh_host=192.168.100.101
+grad-test-remote ansible_ssh_user=vagrant ansible_ssh_host=192.168.100.101 ansible_ssh_port=22
