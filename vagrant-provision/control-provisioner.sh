@@ -14,5 +14,5 @@ sudo -u vagrant -H sh -c "sudo apt-get install ansible -y --force-yes"
 # copy ansible files from local machine to guest control machine in a directory called ansible-test
 sudo -u vagrant -H sh -c "mkdir ~/ansible-test"
 sudo -u vagrant -H sh -c "cp /vagrant/ansible/inventory ~/ansible-test/inventory"
-sudo -u vagrant -H sh -c "cp /vagrant/ansible/patch.ubuntu.yml ~/ansible-test/patch.ubuntu.yml"
-
+sudo -u vagrant -H sh -c "cp /vagrant/ansible/patch.ubuntu.yml ~/ansible-test/my-playbook.yml"
+sudo -u vagrant -H sh -c "cp /vagrant/ansible/patch.ubuntu.yml ~/ansible-test/dev-ops-script.sh"
