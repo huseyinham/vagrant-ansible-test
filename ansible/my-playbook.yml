@@ -1,5 +1,5 @@
 ---
-- name: Patch Ubuntu
+- name: Transfer and execute a script.
   hosts: grad-test-remote
   remote_user: vagrant
   become: yes
@@ -7,6 +7,9 @@
 
   tasks:
 
+#    - name: Execute the script
+#      command: sh ~/git/ubuntu-devops/dev-ops-script.sh
+       
     - name: Get OS Version
       shell: lsb_release -a
       register: os_version
