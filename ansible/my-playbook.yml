@@ -6,6 +6,20 @@
   become_method: sudo 
 
   tasks:
+---
+- name: Transfer and execute a script.
+  hosts: grad-test-remote
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+
+  tasks:
+
+    - name: Copy script
+      copy: src=/home/vagrant/ansible-test/dev-ops-script.sh dest=/home/vagrant$
+
+    - name: Execute the script
+      command: sh /home/vagrant/dev-ops-script.sh
 
 #    - name: Execute the script
 #      command: sh ~/git/ubuntu-devops/dev-ops-script.sh
