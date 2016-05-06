@@ -27,6 +27,7 @@
 
     - name: Execute Show Version Script
       command: sh /home/vagrant/show-version.sh
+      register: os_version
 
     - name: Print OS Version
       debug: var=os_version.stdout_lines
