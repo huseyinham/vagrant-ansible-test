@@ -7,42 +7,21 @@
 
   tasks:
 
-    - name: Copy Show Version Script
-      copy: src=/home/vagrant/ansible-test/show-version.sh dest=/home/vagrant/show-version.sh mode=0777
-
-    - name: Copy Get Update Script
-      copy: src=/home/vagrant/ansible-test/get-update.sh dest=/home/vagrant/get-update.sh mode=0777
-
-    - name: Copy Get Upgrade Script
-      copy: src=/home/vagrant/ansible-test/get-upgrade.sh dest=/home/vagrant/get-upgrade.sh mode=0777
-
-    - name: Copy Get Dist Upgrade Script
-      copy: src=/home/vagrant/ansible-test/get-dist-upgrade.sh dest=/home/vagrant/get-dist-upgrade.sh mode=0777
-
-    - name: Copy Reboot Script
-      copy: src=/home/vagrant/ansible-test/reboot.sh dest=/home/vagrant/reboot.sh mode=0777
-
-    - name: Copy Uptime Script
-      copy: src=/home/vagrant/ansible-test/show-uptime.sh dest=/home/vagrant/show-uptime.sh mode=0777
-
     - name: Execute Show Version Script
-      command: sh /home/vagrant/show-version.sh
+      command: lsb_release -a
       register: os_version
 
     - name: Print OS Version
       debug: var=os_version.stdout_lines
 
     - name: Execute Get Update Script
-      command: sh /home/vagrant/get-update.sh
-
-    - name: Execute Get Upgrade Script
-      command: sh /home/vagrant/get-upgrade.sh
+      command: apt-get update
 
     - name: Execute Get Dist Upgrade Script
-      command: sh /home/vagrant/get-dist-upgrade.sh
+      command: apt-get dist-upgrade
 
     - name: Execute Reboot Script
-      command: sh /home/vagrant/reboot.sh
+      command: shutdown -r
 
     - name: Wait for Machine to come back up
       local_action:
@@ -50,9 +29,6 @@
           host={{ ansible_ssh_host }}
           port={{ ansible_ssh_port }}
           delay=10
-          
-    - name: Print OS Version
-      debug: var=os_version.stdout_lines
 
     - name: Execute Uptime Script
-      command: sh /home/vagrant/show-uptime.sh
+      command: uptime
