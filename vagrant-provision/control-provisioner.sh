@@ -21,4 +21,4 @@ sudo -u vagrant -H sh -c "cp /vagrant/ansible/get-upgrade.sh ~/ansible-test/get-
 sudo -u vagrant -H sh -c "cp /vagrant/ansible/reboot.sh ~/ansible-test/reboot.sh"
 sudo -u vagrant -H sh -c "cp /vagrant/ansible/show-uptime.sh ~/ansible-test/show-uptime.sh"
 sudo -u vagrant -H sh -c "cp /vagrant/ansible/show-version.sh ~/ansible-test/show-version.sh"
-sudo -u vagrant -H sh -c "cp /vagrant/ansible/show-version.sh ~/ansible-test/show-version.sh"
+sudo -u vagrant -H sh -c "cp /vagrant/ansible/show-version.sh ~/ansible-test/oldAttempt.sh"
