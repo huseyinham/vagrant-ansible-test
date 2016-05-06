@@ -3,14 +3,6 @@
   hosts: grad-test-remote
   remote_user: vagrant
   become: yes
-  become_method: sudo 
-
-  tasks:
----
-- name: Transfer and execute a script.
-  hosts: grad-test-remote
-  remote_user: vagrant
-  become: yes
   become_method: sudo
 
   tasks:
